@@ -1,4 +1,5 @@
 import { View } from "react-native";
+import { Bouton } from "@/composants/Bouton";
 import { Ecran } from "@/composants/Ecran";
 import { Texte } from "@/composants/Texte";
 import { useTheme } from "@/theme/useTheme";
@@ -38,6 +39,14 @@ export function EcranVitrine() {
           Légende (13, 400)
         </Texte>
         <Texte variante="libelle">Libellé (16, 700)</Texte>
+
+        <Texte variante="titre">Boutons</Texte>
+        <Bouton titre="Primaire" onPress={() => undefined} />
+        <Bouton titre="Secondaire" type="secondaire" onPress={() => undefined} />
+        <Bouton titre="Tertiaire" type="tertiaire" onPress={() => undefined} />
+        <Bouton titre="Danger" type="danger" onPress={() => undefined} />
+        <Bouton titre="Primaire désactivé" desactive onPress={() => undefined} />
+        <Bouton titre="Secondaire désactivé" type="secondaire" desactive onPress={() => undefined} />
       </View>
     </Ecran>
   );
