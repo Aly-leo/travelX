@@ -1,5 +1,6 @@
-import { ScrollView, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
+import { Ecran } from "@/composants/Ecran";
+import { Texte } from "@/composants/Texte";
 import { useTheme } from "@/theme/useTheme";
 import { clair, sombre } from "@/theme/tokens";
 
@@ -9,9 +10,9 @@ export function EcranVitrine() {
   const noms = Object.keys(clair) as (keyof typeof clair)[];
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: palette.fond }}>
-      <ScrollView contentContainerStyle={{ padding: espacements.m, gap: espacements.s }}>
-        <Text style={{ color: palette.texte, fontSize: 24 }}>Nuancier TravelX</Text>
+    <Ecran defilement>
+      <View style={{ gap: espacements.m }}>
+        <Texte variante="titre">Nuancier TravelX</Texte>
         {noms.map((nom) => (
           <View key={nom} style={{ flexDirection: "row", alignItems: "center", gap: espacements.s }}>
             <View
@@ -24,12 +25,20 @@ export function EcranVitrine() {
                 borderColor: palette.bordure,
               }}
             />
-            <Text style={{ color: palette.texte }}>
+            <Texte variante="legende">
               {nom} — {clair[nom]} / {sombre[nom]}
-            </Text>
+            </Texte>
           </View>
         ))}
-      </ScrollView>
-    </SafeAreaView>
+
+        <Texte variante="titre">Titre (24, 700)</Texte>
+        <Texte variante="sousTitre">Sous-titre (18, 600)</Texte>
+        <Texte variante="corps">Corps (16, 400)</Texte>
+        <Texte variante="legende" couleur="texteSecondaire">
+          Légende (13, 400)
+        </Texte>
+        <Texte variante="libelle">Libellé (16, 700)</Texte>
+      </View>
+    </Ecran>
   );
 }
