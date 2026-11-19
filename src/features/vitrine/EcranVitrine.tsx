@@ -1,6 +1,8 @@
 import { View } from "react-native";
 import { Bouton } from "@/composants/Bouton";
+import { ChampSaisie } from "@/composants/ChampSaisie";
 import { Ecran } from "@/composants/Ecran";
+import { Lien } from "@/composants/Lien";
 import { Texte } from "@/composants/Texte";
 import { useTheme } from "@/theme/useTheme";
 import { clair, sombre } from "@/theme/tokens";
@@ -47,6 +49,18 @@ export function EcranVitrine() {
         <Bouton titre="Danger" type="danger" onPress={() => undefined} />
         <Bouton titre="Primaire désactivé" desactive onPress={() => undefined} />
         <Bouton titre="Secondaire désactivé" type="secondaire" desactive onPress={() => undefined} />
+
+        <Texte variante="titre">Champs et lien</Texte>
+        <ChampSaisie etiquette="Repos" valeur="" onChangeText={() => undefined} placeholder="vous@exemple.com" />
+        <ChampSaisie etiquette="Rempli" valeur="alyssa@exemple.com" onChangeText={() => undefined} />
+        <ChampSaisie
+          etiquette="Erreur"
+          valeur="1234"
+          onChangeText={() => undefined}
+          erreur="Le mot de passe doit contenir au moins 8 caractères"
+        />
+        <ChampSaisie etiquette="Désactivé" valeur="Non modifiable" onChangeText={() => undefined} desactive />
+        <Lien titre="Pas de compte ? Créer un compte" onPress={() => undefined} />
       </View>
     </Ecran>
   );
