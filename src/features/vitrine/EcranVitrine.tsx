@@ -1,5 +1,6 @@
 import { View } from "react-native";
 import { Bouton } from "@/composants/Bouton";
+import { Carte } from "@/composants/Carte";
 import { ChampSaisie } from "@/composants/ChampSaisie";
 import { Ecran } from "@/composants/Ecran";
 import { Lien } from "@/composants/Lien";
@@ -61,6 +62,35 @@ export function EcranVitrine() {
         />
         <ChampSaisie etiquette="Désactivé" valeur="Non modifiable" onChangeText={() => undefined} desactive />
         <Lien titre="Pas de compte ? Créer un compte" onPress={() => undefined} />
+
+        <Texte variante="titre">Cartes</Texte>
+        <Carte
+          titre="Douala → Yaoundé"
+          sousTitre="Bus · 07:30"
+          info="Places disponibles"
+          prix={6000}
+          actionTitre="Réserver"
+          onAction={() => undefined}
+        />
+        <Carte
+          horizontale
+          titre="Douala → Kribi"
+          sousTitre="Bus · 09:00"
+          info="Places disponibles"
+          prix={5000}
+          actionTitre="Réserver"
+          onAction={() => undefined}
+        />
+        <Carte
+          horizontale
+          titre="Yaoundé → Bafoussam"
+          sousTitre="Bus · 08:15"
+          info="Complet"
+          prix={7000}
+          actionTitre="Réserver"
+          actionDesactivee
+          onAction={() => undefined}
+        />
       </View>
     </Ecran>
   );
