@@ -3,6 +3,7 @@ import { Ecran } from "@/composants/Ecran";
 import { Texte } from "@/composants/Texte";
 import { Carte } from "@/composants/Carte";
 import { ChampSaisie } from "@/composants/ChampSaisie";
+import { useSalutation } from "@/hooks/useSalutation";
 import { useTheme } from "@/theme/useTheme";
 import { Filtres } from "../composants/Filtres";
 import { useDeparts } from "../hooks/useDeparts";
@@ -10,6 +11,7 @@ import { useDeparts } from "../hooks/useDeparts";
 // Écran 4. Accueil
 export function EcranAccueil() {
   const { espacements } = useTheme();
+  const salutation = useSalutation();
   const { departsAffiches, villeDepart, setVilleDepart, destination, setDestination, date, setDate, categorie, setCategorie } =
     useDeparts();
 
@@ -23,6 +25,9 @@ export function EcranAccueil() {
         ListHeaderComponent={
           <View style={{ gap: espacements.m, paddingBottom: espacements.s }}>
             <Texte variante="titre" accessibilityRole="header">
+              {salutation} !
+            </Texte>
+            <Texte variante="sousTitre" couleur="texteSecondaire">
               Prochains départs
             </Texte>
             <ChampSaisie
