@@ -8,4 +8,5 @@ export type Depart = {
   categorie: Categorie;
   heure: string;
   prix: number;
+  disponible: boolean;
 };

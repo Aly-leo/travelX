@@ -61,7 +61,8 @@ export function EcranAccueil() {
             horizontale
             titre={item.titre}
             sousTitre={`${item.categorie} · ${item.heure}`}
-            info="Places disponibles"
+            info={item.disponible ? "Places disponibles" : "Complet"}
+            actionDesactivee={!item.disponible}
             prix={item.prix}
             actionTitre="Réserver"
             onAction={() => undefined}
