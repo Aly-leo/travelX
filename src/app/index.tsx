@@ -1,1 +1,1 @@
-export { EcranVitrine as default } from "@/features/vitrine/EcranVitrine";
+export { EcranBienvenue as default } from "@/features/auth/ecrans/EcranBienvenue";
